@@ -1,0 +1,36 @@
+# AITAS Configuration
+
+# Model settings
+model:
+  # Ollama model (recommended - fast and easy!)
+  ollama_model: "deepseek-coder-v2:16b"  # Options: llama3.2:1b (fastest), llama3.2:3b, phi3:mini, qwen2.5:0.5b
+
+  # Legacy settings (not used with Ollama)
+  name: "microsoft/phi-2"
+  device: "cpu"
+  max_length: 512
+  temperature: 0.7
+  top_p: 0.95
+
+# Security settings
+security:
+  enable_sandbox: false
+  allowed_operations:
+    - mkdir
+    - write
+    - read
+    - list
+    - shell  # Allows any shell command!
+    - read
+    - list
+  dangerous_commands:
+    - rm
+    - del
+    - format
+    - shutdown
+
+# CLI settings
+cli:
+  theme: "monokai"
+  show_json: true
+  confirm_actions: true
